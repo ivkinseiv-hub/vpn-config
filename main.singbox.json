@@ -1,18 +1,97 @@
 {
-  "route": {
+  "log": {
+    "level": "info"
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "dns-direct",
+        "type": "https",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "path": "/dns-query",
+        "detour": "direct"
+      },
+      {
+        "tag": "dns-proxy",
+        "type": "https",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "path": "/dns-query",
+        "detour": "proxy"
+      }
+    ],
     "rules": [
       {
-        "geoip": ["private"],
-        "outbound": "direct"
-      },
+        "rule_set": [
+          "direct-rules"
+        ],
+        "server": "dns-direct"
+      }
+    ],
+    "final": "dns-proxy"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "system"
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "vless",
+      "tag": "proxy",
+      "server": "5.129.223.65",
+      "server_port": 30519,
+      "uuid": "393d32ca-59aa-42e5-8352-c751a7fbfd7b",
+      "network": "tcp",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.vk.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "4ngOBa0Ip8pNatevK2bQzdCUqG2x2Pe-UbZit8UHEhA",
+          "short_id": "99"
+        }
+      }
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "rule_set": [
       {
-        "geosite": ["category-ru"],
-        "outbound": "direct"
-      },
+        "type": "remote",
+        "tag": "direct-rules",
+        "format": "source",
+        "url": "https://raw.githubusercontent.com/ivkinseiv-hub/vpn-config/main/rules.json",
+        "download_detour": "direct",
+        "update_interval": "6h"
+      }
+    ],
+    "rules": [
       {
-        "geoip": ["ru"],
+        "rule_set": [
+          "direct-rules"
+        ],
         "outbound": "direct"
       }
-    ]
+    ],
+    "final": "proxy"
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    }
   }
 }
