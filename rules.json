@@ -1,18 +1,1 @@
-{
-  "version": 1,
-  "rules": [
-    {
-      "ip_is_private": true
-    },
-    {
-      "geoip": [
-        "ru"
-      ]
-    },
-    {
-      "geosite": [
-        "category-ru"
-      ]
-    }
-  ]
-}
+
