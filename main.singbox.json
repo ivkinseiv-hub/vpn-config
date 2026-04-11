@@ -1,0 +1,18 @@
+{
+  "route": {
+    "rules": [
+      {
+        "geoip": ["private"],
+        "outbound": "direct"
+      },
+      {
+        "geosite": ["category-ru"],
+        "outbound": "direct"
+      },
+      {
+        "geoip": ["ru"],
+        "outbound": "direct"
+      }
+    ]
+  }
+}
