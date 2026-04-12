@@ -36,7 +36,7 @@
       "type": "tun",
       "tag": "tun-in",
       "auto_route": true,
-      "strict_route": true,
+      "strict_route": false,
       "stack": "system"
     }
   ],
