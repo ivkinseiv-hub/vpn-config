@@ -83,7 +83,7 @@
         "format": "source",
         "url": "https://raw.githubusercontent.com/ivkinseiv-hub/vpn-config/main/direct-rules.json",
         "download_detour": "direct",
-        "update_interval": "6h"
+        "update_interval": "1h"
       },
       {
         "type": "remote",
