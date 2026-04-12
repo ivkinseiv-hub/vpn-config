@@ -1,4 +1,12 @@
 {
   "version": 5,
-  "rules": []
+  "rules": [
+    {
+      "domain_suffix": [
+        "notion.so",
+        "notion.site",
+        "wrike.com"
+      ]
+    }
+  ]
 }
