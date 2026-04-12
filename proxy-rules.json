@@ -1,12 +1,4 @@
 {
   "version": 5,
-  "rules": [
-    {
-      "domain_suffix": [
-        "dropbox.com",
-        "dropboxstatic.com",
-        "dropboxusercontent.com"
-      ]
-    }
-  ]
+  "rules": []
 }
