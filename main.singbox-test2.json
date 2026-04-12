@@ -37,7 +37,14 @@
       "tag": "tun-in",
       "auto_route": true,
       "strict_route": false,
-      "stack": "system"
+      "stack": "system",
+
+      "inet4_route_exclude_address": [
+      "192.168.1.0/24",
+      "10.7.0.0/24",
+      "10.201.0.0/24",
+      "10.200.0.0/24"
+    ]
     }
   ],
   "outbounds": [
