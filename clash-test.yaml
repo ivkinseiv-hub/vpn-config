@@ -1,6 +1,7 @@
 mixed-port: 7890
 allow-lan: false
 mode: rule
+ipv6: false
 
 proxies:
   - name: proxy-main
@@ -25,21 +26,22 @@ proxy-groups:
       - DIRECT
 
 rules:
-  # --- КРИТИЧНЫЕ ИСКЛЮЧЕНИЯ
+  # --- ГОСУСЛУГИ
+  - DOMAIN,esia.gosuslugi.ru,DIRECT
   - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
-  - DOMAIN-SUFFIX,esia.gosuslugi.ru,DIRECT
-  - DOMAIN-SUFFIX,*.gosuslugi.ru,DIRECT
+
+  # --- БАНКИ
   - DOMAIN-SUFFIX,sberbank.ru,DIRECT
   - DOMAIN-SUFFIX,vtb.ru,DIRECT
   - DOMAIN-SUFFIX,alfabank.ru,DIRECT
 
-  # --- ЛОКАЛКА
+  # --- ЛОКАЛЬНЫЕ СЕТИ / WG
   - IP-CIDR,192.168.0.0/16,DIRECT
   - IP-CIDR,10.0.0.0/8,DIRECT
   - IP-CIDR,172.16.0.0/12,DIRECT
 
-  # --- РФ по IP (как fallback)
+  # --- РФ ПО IP
   - GEOIP,RU,DIRECT
 
-  # --- ВСЁ ОСТАЛЬНОЕ
+  # --- ВСЁ ОСТАЛЬНОЕ ЧЕРЕЗ ПРОКСИ
   - MATCH,PROXY
