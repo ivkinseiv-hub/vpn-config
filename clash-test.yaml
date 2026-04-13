@@ -25,23 +25,20 @@ proxy-groups:
       - DIRECT
 
 rules:
-  # --- КРИТИЧНЫЕ РУЧНЫЕ ИСКЛЮЧЕНИЯ (самое важное)
+  # --- КРИТИЧНЫЕ ИСКЛЮЧЕНИЯ
   - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
   - DOMAIN-SUFFIX,esia.gosuslugi.ru,DIRECT
   - DOMAIN-SUFFIX,sberbank.ru,DIRECT
   - DOMAIN-SUFFIX,vtb.ru,DIRECT
   - DOMAIN-SUFFIX,alfabank.ru,DIRECT
 
-  # --- ЛОКАЛЬНЫЕ СЕТИ (чтобы WG никогда не ломался)
+  # --- ЛОКАЛКА
   - IP-CIDR,192.168.0.0/16,DIRECT
   - IP-CIDR,10.0.0.0/8,DIRECT
   - IP-CIDR,172.16.0.0/12,DIRECT
 
-  # --- РОССИЯ (через домены — более надежно)
-  - GEOSITE,ru,DIRECT
-
-  # --- ФОЛБЭК ПО IP
+  # --- РФ по IP (как fallback)
   - GEOIP,RU,DIRECT
 
-  # --- ВСЁ ОСТАЛЬНОЕ В ПРОКСИ
+  # --- ВСЁ ОСТАЛЬНОЕ
   - MATCH,PROXY
