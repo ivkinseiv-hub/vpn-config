@@ -1,0 +1,39 @@
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+
+
+proxies:
+  - name: 74-ivkofficepc-clash
+    type: vless
+    server: 5.129.223.65
+    port: 20264
+    uuid: 2c99df06-8f68-4119-8fef-5ddbf38bba09
+    network: tcp
+    udp: true
+    tls: true
+    servername: www.vk.com
+    reality-opts:
+      public-key: bSEE3pd_kA7WCZiT_jOHeeseKEqGy-gmGNjGK-_UO2g
+      short-id: bf946fbca397fe
+    client-fingerprint: chrome
+
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 74-ivkofficepc-clash
+      - DIRECT
+
+
+rules:
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - DOMAIN-SUFFIX,api.ipify.org,DIRECT
+  - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
+  - DOMAIN-SUFFIX,mos.ru,DIRECT
+  - DOMAIN-SUFFIX,openai.com,PROXY
+  - MATCH,PROXY
+
