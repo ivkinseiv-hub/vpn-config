@@ -32,9 +32,26 @@ proxy-groups:
 rules:
   - IP-CIDR,192.168.0.0/16,DIRECT
   - DOMAIN-SUFFIX,api.ipify.org,DIRECT
-  - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
   - DOMAIN-SUFFIX,mos.ru,DIRECT
+  - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
+  - DOMAIN-SUFFIX,dropbox.com,DIRECT
   - DOMAIN-SUFFIX,openai.com,PROXY
+  - DOMAIN-SUFFIX,dropboxapi.com,DIRECT
+  - DOMAIN-SUFFIX,dropboxusercontent.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+  - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+  - DOMAIN-SUFFIX,onedrive.live.com,DIRECT
+  - DOMAIN-SUFFIX,sharepoint.com,DIRECT
+  - DOMAIN-SUFFIX,zoom.us,DIRECT
+  - DOMAIN-SUFFIX,teams.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,skype.com,DIRECT
+  - DOMAIN-SUFFIX,rtc.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,tuya.com,DIRECT
+  - DOMAIN-SUFFIX,smartlife.com,DIRECT
+  - DOMAIN-SUFFIX,aqara.com,DIRECT
+  - DOMAIN-SUFFIX,lumiunited.com,DIRECT
+  - DOMAIN-SUFFIX,mi.com,DIRECT
   - GEOIP,RU,DIRECT
   - MATCH,PROXY
 
