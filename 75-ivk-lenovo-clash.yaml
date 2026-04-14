@@ -31,6 +31,7 @@ proxy-groups:
 
 rules:
   - IP-CIDR,192.168.0.0/16,DIRECT
+  - DOMAIN-SUFFIX,api.ipify.org,DIRECT
   - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
   - DOMAIN-SUFFIX,test-update-1.local,DIRECT
   - DOMAIN-SUFFIX,openai.com,PROXY
