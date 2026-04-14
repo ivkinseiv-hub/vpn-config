@@ -35,7 +35,7 @@ rules:
   - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
   - DOMAIN-SUFFIX,mos.ru,DIRECT
   - DOMAIN-SUFFIX,openai.com,PROXY
-  - GEOSITE,ru,DIRECT
+  - GEOSITE,geolocation-ru,DIRECT
   - GEOIP,RU,DIRECT
   - MATCH,PROXY
 
