@@ -1,0 +1,60 @@
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+
+dns:
+  enable: true
+  ipv6: false
+
+
+proxies:
+  - name: 72-ivk-iphone-shadowrocket
+    type: vless
+    server: 5.129.223.65
+    port: 21633
+    uuid: 5355dda2-bd3e-4ec5-9133-ec84e465aabc
+    network: tcp
+    udp: true
+    tls: true
+    servername: vk.com
+    reality-opts:
+      public-key: QoH2-am5kLIfhpM0NiR64Z9tVRAVrKIf4Ww_1zPlQGY
+      short-id: 04
+    client-fingerprint: edge
+
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 72-ivk-iphone-shadowrocket
+      - DIRECT
+
+
+rules:
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
+  - DOMAIN-SUFFIX,mos.ru,DIRECT
+  - DOMAIN-SUFFIX,openai.com,PROXY
+  - DOMAIN-SUFFIX,dropbox.com,DIRECT
+  - DOMAIN-SUFFIX,dropboxapi.com,DIRECT
+  - DOMAIN-SUFFIX,dropboxusercontent.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+  - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+  - DOMAIN-SUFFIX,onedrive.live.com,DIRECT
+  - DOMAIN-SUFFIX,sharepoint.com,DIRECT
+  - DOMAIN-SUFFIX,zoom.us,DIRECT
+  - DOMAIN-SUFFIX,teams.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,skype.com,DIRECT
+  - DOMAIN-SUFFIX,rtc.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,tuya.com,DIRECT
+  - DOMAIN-SUFFIX,smartlife.com,DIRECT
+  - DOMAIN-SUFFIX,aqara.com,DIRECT
+  - DOMAIN-SUFFIX,lumiunited.com,DIRECT
+  - DOMAIN-SUFFIX,mi.com,DIRECT
+  - GEOIP,RU,DIRECT
+  - MATCH,PROXY
+
