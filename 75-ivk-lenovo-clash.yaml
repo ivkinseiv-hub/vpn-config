@@ -1,0 +1,37 @@
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+
+
+proxies:
+  - name: 75-ivk-lenovo-clash
+    type: vless
+    server: 5.129.223.65
+    port: 30519
+    uuid: 393d32ca-59aa-42e5-8352-c751a7fbfd7b
+    network: tcp
+    udp: true
+    tls: true
+    servername: www.vk.com
+    reality-opts:
+      public-key: 4ngOBa0Ip8pNatevK2bQzdCUqG2x2Pe-UbZit8UHEhA
+      short-id: 99
+    client-fingerprint: chrome
+
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 75-ivk-lenovo-clash
+      - DIRECT
+
+
+rules:
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
+  - DOMAIN-SUFFIX,openai.com,PROXY
+  - MATCH,PROXY
+
