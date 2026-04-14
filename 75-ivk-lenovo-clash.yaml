@@ -4,6 +4,10 @@ allow-lan: false
 mode: rule
 ipv6: false
 
+dns:
+  enable: true
+  ipv6: false
+
 
 proxies:
   - name: 75-ivk-lenovo-clash
