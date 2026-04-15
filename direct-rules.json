@@ -1,8 +1,0 @@
-{
-  "version": 5,
-  "rules": [
-    {
-      "ip_is_private": true
-    }
-  ]
-}
