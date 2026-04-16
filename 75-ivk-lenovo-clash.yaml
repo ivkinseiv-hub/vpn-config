@@ -41,6 +41,7 @@ rules:
   - DOMAIN-SUFFIX,api.ipify.org,DIRECT
   - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
   - DOMAIN-SUFFIX,mos.ru,DIRECT
+  - DOMAIN-SUFFIX,nalog.ru,DIRECT
   - DOMAIN-SUFFIX,apple.com,DIRECT
   - DOMAIN-SUFFIX,microsoft.com,DIRECT
   - DOMAIN-SUFFIX,live.com,DIRECT
@@ -56,10 +57,10 @@ rules:
   - DOMAIN-SUFFIX,dropboxusercontent.com,DIRECT
   - DOMAIN-SUFFIX,icloud.com,DIRECT
   - DOMAIN-SUFFIX,icloud-content.com,DIRECT
-  - DOMAIN-SUFFIX,akamaihd.net,DIRECT
   - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
   - DOMAIN-SUFFIX,fastly.net,DIRECT
   - DOMAIN-SUFFIX,cloudfront.net,DIRECT
+  - DOMAIN-SUFFIX,akamaihd.net,DIRECT
   - DOMAIN-SUFFIX,onedrive.live.com,DIRECT
   - DOMAIN-SUFFIX,sharepoint.com,DIRECT
   - DOMAIN-SUFFIX,zoom.us,DIRECT
