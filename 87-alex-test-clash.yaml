@@ -12,17 +12,17 @@ dns:
 proxies:
   - name: 87-alex-test-clash
     type: vless
-    server: null
-    port: null
-    uuid: null
-    network: null
+    server: 5.129.223.65
+    port: 31301
+    uuid: 516e24f2-2f2b-4b92-804e-2a94fce30759
+    network: tcp
     udp: true
     tls: true
-    servername: null
+    servername: vk.com
     reality-opts:
-      public-key: null
-      short-id: null
-    client-fingerprint: null
+      public-key: E0yZyL-fA36N_vvzT6MWrdJ1kPkJQGUfU7wP7TvJjnQ
+      short-id: 3e
+    client-fingerprint: chrome
 
 
 proxy-groups:
