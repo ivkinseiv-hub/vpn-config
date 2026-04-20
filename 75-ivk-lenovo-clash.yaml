@@ -21,11 +21,11 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    servername: www.vk.com
+    servername: www.cloudflare.com
     reality-opts:
       public-key: 4ngOBa0Ip8pNatevK2bQzdCUqG2x2Pe-UbZit8UHEhA
       short-id: 99
-    client-fingerprint: chrome
+    client-fingerprint: firefox
 
 
 proxy-groups:
