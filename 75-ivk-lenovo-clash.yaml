@@ -19,7 +19,7 @@ proxies:
     port: 30519
     uuid: 393d32ca-59aa-42e5-8352-c751a7fbfd7b
     network: tcp
-    udp: true
+    udp: false 
     tls: true
     servername: www.cloudflare.com
     reality-opts:
