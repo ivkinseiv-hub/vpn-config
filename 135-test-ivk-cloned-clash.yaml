@@ -1,0 +1,78 @@
+
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+
+dns:
+  enable: true
+  ipv6: false
+
+
+proxies:
+  - name: 135-test-ivk-cloned-clash
+    type: vless
+    server: 5.129.223.65
+    port: 28289
+    uuid: c1924ab6-8191-4346-b6a7-0903abc53740
+    network: tcp
+    udp: true
+    tls: true
+    servername: vk.com
+    reality-opts:
+      public-key: E0yZyL-fA36N_vvzT6MWrdJ1kPkJQGUfU7wP7TvJjnQ
+      short-id: 3e
+    client-fingerprint: chrome
+
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 135-test-ivk-cloned-clash
+      - DIRECT
+
+
+rules:
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - IP-CIDR,169.254.0.0/16,DIRECT
+  - DOMAIN-SUFFIX,api.ipify.org,DIRECT
+  - DOMAIN-SUFFIX,nalog.ru,DIRECT
+  - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
+  - DOMAIN-SUFFIX,mos.ru,DIRECT
+  - DOMAIN-SUFFIX,netcraze.io,DIRECT
+  - DOMAIN-SUFFIX,apple.com,DIRECT
+  - DOMAIN-SUFFIX,office365.com,DIRECT
+  - DOMAIN-SUFFIX,windowsupdate.com,DIRECT
+  - DOMAIN-SUFFIX,microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,live.com,DIRECT
+  - DOMAIN-SUFFIX,onedrive.com,DIRECT
+  - DOMAIN-SUFFIX,mzstatic.com,DIRECT
+  - DOMAIN-SUFFIX,openai.com,PROXY
+  - DOMAIN-SUFFIX,discord.com,DIRECT
+  - DOMAIN-SUFFIX,discord.gg,DIRECT
+  - DOMAIN-SUFFIX,dropbox.com,DIRECT
+  - DOMAIN-SUFFIX,dropboxapi.com,DIRECT
+  - DOMAIN-SUFFIX,dropboxusercontent.com,DIRECT
+  - DOMAIN-SUFFIX,icloud.com,DIRECT
+  - DOMAIN-SUFFIX,icloud-content.com,DIRECT
+  - DOMAIN-SUFFIX,fastly.net,DIRECT
+  - DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+  - DOMAIN-SUFFIX,akamaihd.net,DIRECT
+  - DOMAIN-SUFFIX,cloudfront.net,DIRECT
+  - DOMAIN-SUFFIX,onedrive.live.com,DIRECT
+  - DOMAIN-SUFFIX,sharepoint.com,DIRECT
+  - DOMAIN-SUFFIX,zoom.us,DIRECT
+  - DOMAIN-SUFFIX,teams.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,skype.com,DIRECT
+  - DOMAIN-SUFFIX,rtc.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,tuya.com,DIRECT
+  - DOMAIN-SUFFIX,smartlife.com,DIRECT
+  - DOMAIN-SUFFIX,aqara.com,DIRECT
+  - DOMAIN-SUFFIX,lumiunited.com,DIRECT
+  - DOMAIN-SUFFIX,mi.com,DIRECT
+  - GEOIP,RU,DIRECT
+  - MATCH,PROXY
+
