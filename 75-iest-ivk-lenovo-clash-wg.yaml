@@ -1,0 +1,89 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+ipv6: false
+
+dns:
+  enable: true
+  ipv6: false
+
+proxies:
+  - name: 75-ivk-lenovo-clash
+    type: vless
+    server: 5.129.223.65
+    port: 30519
+    uuid: 393d32ca-59aa-42e5-8352-c751a7fbfd7b
+    network: tcp
+    udp: true
+    tls: true
+    servername: www.vk.com
+    reality-opts:
+      public-key: 4ngOBa0Ip8pNatevK2bQzdCUqG2x2Pe-UbZit8UHEhA
+      short-id: 99
+    client-fingerprint: chrome
+
+  - name: 75-ivk-lenovo-wg
+    type: wireguard
+    server: 5.129.223.65
+    port: 34714
+    ip: 10.0.0.2
+    private-key: cGT8Fd/VAlG6RyGCLkAXyRL7VYaY8WtUiog+s2CcZVg=
+    public-key: H7siSfPiiAvGTs+eEHc0z8mM+DdP66gHpZ+42mxTVGI=
+    pre-shared-key: sc48MGHF2mgWNgLunnBjcdFP1dF1gT++ijgGuDGm7tw=
+    mtu: 1420
+    udp: true
+    dns:
+      - 1.1.1.1
+      - 1.0.0.1
+    allowed-ips:
+      - 0.0.0.0/0
+      - ::/0
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - 75-ivk-lenovo-clash
+      - 75-ivk-lenovo-wg
+      - DIRECT
+
+rules:
+  - IP-CIDR,169.254.0.0/16,DIRECT
+  - IP-CIDR,100.64.0.0/10,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,224.0.0.0/4,DIRECT
+  - DOMAIN-SUFFIX,api.ipify.org,DIRECT
+  - DOMAIN-SUFFIX,gosuslugi.ru,DIRECT
+  - DOMAIN-SUFFIX,mos.ru,DIRECT
+  - DOMAIN-SUFFIX,nalog.ru,DIRECT
+  - DOMAIN-SUFFIX,netcraze.io,DIRECT
+  - DOMAIN-SUFFIX,windowsupdate.com,DIRECT
+  - DOMAIN-SUFFIX,office365.com,DIRECT
+  - DOMAIN-SUFFIX,onedrive.com,DIRECT
+  - DOMAIN-SUFFIX,live.com,DIRECT
+  - DOMAIN-SUFFIX,microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,discord.gg,DIRECT
+  - DOMAIN-SUFFIX,discord.com,DIRECT
+  - DOMAIN-SUFFIX,dropbox.com,DIRECT
+  - DOMAIN-SUFFIX,openai.com,PROXY
+  - DOMAIN-SUFFIX,dropboxapi.com,DIRECT
+  - DOMAIN-SUFFIX,dropboxusercontent.com,DIRECT
+  - DOMAIN-SUFFIX,fastly.net,DIRECT
+  - DOMAIN-SUFFIX,cloudfront.net,DIRECT
+  - DOMAIN-SUFFIX,akamaihd.net,DIRECT
+  - DOMAIN-SUFFIX,onedrive.live.com,DIRECT
+  - DOMAIN-SUFFIX,sharepoint.com,DIRECT
+  - DOMAIN-SUFFIX,rtc.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,lync.com,DIRECT
+  - DOMAIN-SUFFIX,max.ru,DIRECT
+  - DOMAIN-SUFFIX,zoom.us,DIRECT
+  - DOMAIN-SUFFIX,teams.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,skype.com,DIRECT
+  - DOMAIN-SUFFIX,tuya.com,DIRECT
+  - DOMAIN-SUFFIX,smartlife.com,DIRECT
+  - DOMAIN-SUFFIX,aqara.com,DIRECT
+  - DOMAIN-SUFFIX,lumiunited.com,DIRECT
+  - DOMAIN-SUFFIX,mi.com,DIRECT
+  - DOMAIN-SUFFIX,adobe.com,REJECT
+  - GEOIP,RU,DIRECT
+  - MATCH,PROXY
