@@ -18,11 +18,11 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    servername: apple.com
+    servername: www.amd.com
     reality-opts:
-      public-key: 4lbyBwXOczXIJt-ErjO7sC0dgSv5FFsZR1f223XH1Xc
-      short-id: 0e
-    client-fingerprint: chrome
+      public-key: 0mzt1IVhL8H971oE_HsSf0zMdeDyWZgaWEC8YLKjCjY
+      short-id: 37
+    client-fingerprint: edge
 
 
 proxy-groups:
