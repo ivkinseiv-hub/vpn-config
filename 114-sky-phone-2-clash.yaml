@@ -18,11 +18,11 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    servername: amazon.com
+    servername: www.amd.com
     reality-opts:
-      public-key: XxdQ370I9SMkRAyzRYKPpAF7FoWuHr0DVeTJFhscvks
-      short-id: 16
-    client-fingerprint: chrome
+      public-key: i182p-_3vM9zTuycOtRRWfW1Yj3VHDRVwNTcomqQtGM
+      short-id: b089cee3ba92
+    client-fingerprint: edge
 
 
 proxy-groups:
