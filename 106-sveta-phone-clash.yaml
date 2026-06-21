@@ -18,11 +18,11 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    servername: icloud.com
+    servername: www.amd.com
     reality-opts:
-      public-key: uLy9P5b5k84GMYj-D7u1e6NVp7b2PBtscMjswDsHq2A
-      short-id: 30d753
-    client-fingerprint: chrome
+      public-key: kyWEwaktygh-7gmBPmmOvqsIN2sxv2tnGKRQB-eyUkg
+      short-id: e2
+    client-fingerprint: edge
 
 
 proxy-groups:
