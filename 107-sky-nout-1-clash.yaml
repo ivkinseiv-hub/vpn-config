@@ -18,11 +18,11 @@ proxies:
     network: tcp
     udp: true
     tls: true
-    servername: vk.com
+    servername: www.amd.com
     reality-opts:
-      public-key: g9PC0TnQtKHt4pgRbSsa6_tbBVuX7972DfYaG4YHCEY
-      short-id: bb
-    client-fingerprint: chrome
+      public-key: Fov_QubjX3bNRMppMgKw7L5C4nF5f4EfQJNZX31AyQs
+      short-id: ff
+    client-fingerprint: edge
 
 
 proxy-groups:
